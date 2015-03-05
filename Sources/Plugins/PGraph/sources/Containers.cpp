@@ -5,7 +5,7 @@
 // Login   <ovoyan_s@epitech.net>
 // 
 // Started on  Thu May  1 23:24:26 2014 ovoyan_s
-// Last update Tue Feb 10 09:41:38 2015 ovoyan_s
+// Last update Thu Feb 12 20:19:58 2015 ovoyan_s
 //
 
 /*
@@ -193,24 +193,26 @@ std::string			MyString::GetSectionOfString(char c, int iterator1, int iterator2)
   std::string			str_to_ret = "";
   unsigned int			it1 = 0;
   unsigned int			it2 = 0;
-
+  
   for (unsigned int counter = 0; counter < sizeOfStr && cCounter < iterator1; ++counter)
     {
       if ((*this)[counter] == c)
 	++cCounter;
       it1 = counter;
     }
-  for (unsigned int counter = it1 + 2; counter < sizeOfStr && cCounter < iterator2; ++counter)
+  if (iterator1 != 0)
+    ++it1;
+  for (unsigned int counter = it1; counter < sizeOfStr && cCounter < iterator2; ++counter)
     {
       if ((*this)[counter] == c)
 	++cCounter;
       it2 = counter;
     }
-  if (iterator1 != 0)
-    {
-      it1 += 1;
-      it2 += 1;
-    }
+  if ((*this)[it2] != '\t')
+    ++it2;
+
+  if (it2 == (*this).size() - 1)
+    ++it2;
   while (it1 < it2)
     {
       str_to_ret += (*this)[it1];

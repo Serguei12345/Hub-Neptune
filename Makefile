@@ -5,7 +5,7 @@
 ## Login   <ovoyan_s@epitech.net>
 ## 
 ## Started on  Wed Apr 30 16:52:06 2014 ovoyan_s
-## Last update Tue Feb 10 11:49:56 2015 ovoyan_s
+## Last update Mon Mar  2 18:45:46 2015 ovoyan_s
 ##
 
 SRC_FILES	=	sources
@@ -24,9 +24,11 @@ SRC		=	main.cpp 				\
 			$(TOOLS)/$(SRC_FILES)/Containers.cpp	\
 			$(TOOLS)/$(SRC_FILES)/Time.cpp		\
 			$(TOOLS)/$(SRC_FILES)/Random.cpp	\
-			$(CORE)/$(SRC_FILES)/APlugin.cpp		\
+			$(CORE)/$(SRC_FILES)/APlugin.cpp	\
 			$(CORE)/$(SRC_FILES)/Ecosysteme.cpp	\
-			$(CORE)/$(SRC_FILES)/PluginManager.cpp
+			$(CORE)/$(SRC_FILES)/PluginManager.cpp	\
+			$(CORE)/$(SRC_FILES)/Request.cpp	\
+			$(CORE)/$(SRC_FILES)/RequestManager.cpp	\
 
 OBJ		=	$(SRC:.cpp=.o)
 

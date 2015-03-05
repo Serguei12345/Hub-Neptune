@@ -5,7 +5,7 @@
 // Login   <ovoyan_s@epitech.net>
 // 
 // Started on  Wed Feb  4 20:04:41 2015 ovoyan_s
-// Last update Tue Feb 10 13:31:27 2015 ovoyan_s
+// Last update Thu Feb 12 21:07:53 2015 ovoyan_s
 //
 
 #include		"PluginManager.hh"
@@ -23,18 +23,18 @@ PluginManager::~PluginManager()
 
 void			PluginManager::loadPlugin(const std::string& filePath)
 {
-  FileManager		fm;
   APlugin*		(*pluginRet)();
 
-  fm.loadFile(filePath);
-  std::string		nfm = fm.getNameOfFile();
-  this->handle = dlopen((char*)filePath.c_str(), RTLD_LAZY);
+  errno = 0;
+  this->handle = dlopen((char*)filePath.c_str(), RTLD_NOW);
+
   if (this->handle == NULL)
-    throw (MyException("DL handle failed"));
+    {
+      throw (MyException(dlerror()));
+    }
   pluginRet = (APlugin*(*)())dlsym(handle, "retPlugin");
  
   this->aPlugin = pluginRet();
-  this->aPlugin->initialisation();
   if (this->aPlugin == NULL)
     {
       if (this->handle != NULL)
@@ -48,6 +48,11 @@ void			PluginManager::setNameOfPlugin(const std::string& nameOfPluginToSet)
   this->nameOfPlugin = nameOfPluginToSet;
 }
 
+void			PluginManager::setConfigFile(const std::string& configFileOfPluginToSet)
+{
+  this->configFileOfPlugin = configFileOfPluginToSet;
+}
+
 std::string		&PluginManager::getNameOfPlugin() const
 {
   return (const_cast<std::string&>(this->nameOfPlugin));
@@ -56,4 +61,9 @@ std::string		&PluginManager::getNameOfPlugin() const
 APlugin			*PluginManager::getPlugin()
 {
   return (this->aPlugin);
+}
+
+std::string		&PluginManager::getConfigFile() const
+{
+  return (const_cast<std::string&>(this->configFileOfPlugin));
 }

@@ -5,7 +5,7 @@
 // Login   <ovoyan_s@epitech.net>
 // 
 // Started on  Wed Feb  4 16:58:18 2015 ovoyan_s
-// Last update Mon Feb  9 18:09:40 2015 ovoyan_s
+// Last update Thu Mar  5 20:29:48 2015 ovoyan_s
 //
 
 #include		"main.hh"
@@ -15,7 +15,7 @@ void			initialisation(char **av)
 {
   Ecosysteme		ecosystem;
 
-  ecosystem.start(av);
+  ecosystem.initEcosystem(av);
 }
 
 int			main(int ac, char **av)
@@ -26,7 +26,7 @@ int			main(int ac, char **av)
 	{
 	  initialisation(av);
 	}
-      catch (std::exception e)
+      catch (MyException e)
 	{
 	  std::cout << e.what() << std::endl;
 	}

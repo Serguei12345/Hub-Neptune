@@ -5,15 +5,21 @@
 ## Login   <ovoyan_s@epitech.net>
 ## 
 ## Started on  Wed Feb  4 20:32:21 2015 ovoyan_s
-## Last update Tue Feb 10 11:48:17 2015 ovoyan_s
+## Last update Thu Mar  5 20:05:21 2015 ovoyan_s
 ##
 
 SRC_FILES	=	sources
 
 HDR_FILES	=	headers
 
-SRC		=	$(SRC_FILES)/PGraph.cpp		\
-			$(SRC_FILES)/APlugin.cpp
+SRC		=	$(SRC_FILES)/PGraph.cpp			\
+			$(SRC_FILES)/APlugin.cpp		\
+			$(SRC_FILES)/EventActions.cpp		\
+			$(SRC_FILES)/FileManager.cpp		\
+			$(SRC_FILES)/Containers.cpp		\
+			$(SRC_FILES)/Random.cpp			\
+			$(SRC_FILES)/Time.cpp			\
+			$(SRC_FILES)/MyException.cpp		\
 
 OBJ		=	$(SRC:.cpp=.o)
 

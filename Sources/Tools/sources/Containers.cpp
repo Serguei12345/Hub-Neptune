@@ -5,7 +5,7 @@
 // Login   <ovoyan_s@epitech.net>
 // 
 // Started on  Thu May  1 23:24:26 2014 ovoyan_s
-// Last update Tue Feb 10 09:50:24 2015 ovoyan_s
+// Last update Thu Feb 12 20:19:58 2015 ovoyan_s
 //
 
 /*
@@ -208,7 +208,10 @@ std::string			MyString::GetSectionOfString(char c, int iterator1, int iterator2)
 	++cCounter;
       it2 = counter;
     }
-  if (iterator1 != 0)
+  if ((*this)[it2] != '\t')
+    ++it2;
+
+  if (it2 == (*this).size() - 1)
     ++it2;
   while (it1 < it2)
     {

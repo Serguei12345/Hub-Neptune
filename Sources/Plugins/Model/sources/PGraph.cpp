@@ -5,7 +5,7 @@
 // Login   <ovoyan_s@epitech.net>
 // 
 // Started on  Wed Feb  4 20:35:23 2015 ovoyan_s
-// Last update Tue Feb 10 12:29:03 2015 ovoyan_s
+// Last update Thu Mar  5 17:06:31 2015 ovoyan_s
 //
 
 #include		"PGraph.hh"
@@ -25,16 +25,21 @@ void			PGraph::initialisation()
   std::cout << "initialisation" << std::endl;
 }
 
-std::string		PGraph::update()
+std::vector<std::string>	PGraph::update()
 {
-  std::cout << "SWAG" << std::endl;
-  return ("");
+  std::vector<std::string>	test;
+
+  test.clear();
+  return (test);
 }
 
-std::string		PGraph::doRequest(const std::string& request)
+std::vector<std::string>	PGraph::doRequest(const std::string& request)
 {
+  std::vector<std::string>	test;
+
   (void)request;
-  return ("");
+  test.clear();
+  return (test);
 }
 
 extern "C"

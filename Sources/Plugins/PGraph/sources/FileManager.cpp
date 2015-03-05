@@ -5,7 +5,7 @@
 // Login   <ovoyan_s@epitech.net>
 // 
 // Started on  Wed Feb  4 17:05:44 2015 ovoyan_s
-// Last update Tue Feb 10 09:38:41 2015 ovoyan_s
+// Last update Thu Feb 12 20:32:44 2015 ovoyan_s
 //
 
 #include		"FileManager.hh"
@@ -37,6 +37,7 @@ void		FileManager::loadFile(const std::string &pathOfFile)
     this->linesOfFile.push_back(strToUse);
   if (this->findNameOfFile(pathOfFile) == false || this->findExtensionOfFile(pathOfFile) == false)
     throw (MyException("The loaded file is not good"));
+  fileStream.close();
 }
 
 bool		FileManager::findNameOfFile(const std::string& pathOfFile)
@@ -70,30 +71,33 @@ std::vector<std::string>		&FileManager::getContent() const
   return (const_cast<std::vector<std::string>&>(linesOfFile));
 }
 
-std::map<std::string, std::string>	FileManager::getConfigContent()
+std::map<std::string, std::vector<std::string> >	FileManager::getConfigContent()
 {
-  std::map<std::string, std::string>	mapToRet;
+  std::map<std::string, std::vector<std::string> >	mapToRet;
   unsigned int				size = this->linesOfFile.size();
 
   for (unsigned int counter = 0; counter < size; ++counter)
     {
-      std::pair<std::string, std::string> pairToAdd = this->getPairAtString(this->linesOfFile[counter]);
+      std::pair<std::string, std::vector<std::string> > pairToAdd
+	= this->getPairAtString(this->linesOfFile[counter]);
       mapToRet.insert(pairToAdd);
     } 
   return (mapToRet);
 }
 
-std::pair<std::string, std::string>	FileManager::getPairAtString(const std::string& strToUse)
+std::pair<std::string, std::vector<std::string> > FileManager::getPairAtString(const std::string& strToUse)
 {
   MyString				element = strToUse;
 
   if (element.GetOccurences(element) != 1)
     throw (MyException("Invalid element"));
   std::string firstElement = element.GetSectionOfString('\t', 0, 1);
-  std::string secondElement = element.GetSectionOfString('\t', 1, 2);
-  std::pair<std::string, std::string>	pairToRet(firstElement, secondElement);
 
-  std::cout << firstElement << "A" << secondElement << std::endl;
+  std::vector<std::string> secondElement;
+  secondElement.push_back(element.GetSectionOfString('\t', 1, 2));
+  secondElement.push_back(element.GetSectionOfString('\t', 2, 3));
+
+  std::pair<std::string, std::vector<std::string> >	pairToRet(firstElement, secondElement);
   return (pairToRet);
 }
 
