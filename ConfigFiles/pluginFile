@@ -1,2 +1,2 @@
-PGraph	Plugins/PGraph.so	ConfigFiles/PGraph
-PInput	Plugins/PInput.so	ConfigFiles/PInput
+PGraph	Plugins/pgraph.so	ConfigFiles/PGraph
+PInput	Plugins/pinput.so	ConfigFiles/PInput

@@ -5,7 +5,7 @@
 ## Login   <ovoyan_s@epitech.net>
 ## 
 ## Started on  Wed Feb  4 20:32:21 2015 ovoyan_s
-## Last update Thu Mar  5 20:05:21 2015 ovoyan_s
+## Last update Thu Mar 19 14:16:11 2015 ovoyan_s
 ##
 
 SRC_FILES	=	sources
@@ -34,7 +34,7 @@ CXXFLAGS	=	-Wall -Werror -Wextra		\
 			-lSDL -lSDL_image		\
 			-lGL -lGLU -ldl
 
-NAME		=	PGraph.so
+NAME		=	pgraph.so
 
 all:		$(NAME)
 

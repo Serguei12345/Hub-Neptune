@@ -5,7 +5,7 @@
 ## Login   <ovoyan_s@epitech.net>
 ## 
 ## Started on  Wed Apr 30 16:52:06 2014 ovoyan_s
-## Last update Mon Mar  2 18:45:46 2015 ovoyan_s
+## Last update Fri Mar 20 12:48:41 2015 ovoyan_s
 ##
 
 SRC_FILES	=	sources
@@ -19,6 +19,7 @@ PLUGINS		=	Sources/Plugins
 CORE		=	Sources/Core
 
 SRC		=	main.cpp 				\
+			$(TOOLS)/$(SRC_FILES)/File.cpp		\
 			$(TOOLS)/$(SRC_FILES)/FileManager.cpp	\
 			$(TOOLS)/$(SRC_FILES)/MyException.cpp	\
 			$(TOOLS)/$(SRC_FILES)/Containers.cpp	\

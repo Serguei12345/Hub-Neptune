@@ -1,21 +1,10 @@
-##
-## Makefile for PGraph in /home/ovoyan_s/Hub-Neptune/Sources/Plugins/PGraph
-## 
-## Made by ovoyan_s
-## Login   <ovoyan_s@epitech.net>
-## 
-## Started on  Wed Feb  4 20:32:21 2015 ovoyan_s
-## Last update Thu Mar 19 14:16:33 2015 ovoyan_s
-##
+##		PluginName
 
 SRC_FILES	=	sources
 
 HDR_FILES	=	headers
 
-SRC		=	$(SRC_FILES)/PInput.cpp		\
-			$(SRC_FILES)/APlugin.cpp	\
-			$(SRC_FILES)/Events.cpp		\
-			$(SRC_FILES)/MyException.cpp	\
+SRC		=	$(SRC_FILES)/ClassName.cpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
@@ -30,7 +19,7 @@ CXXFLAGS	=	-Wall -Werror -Wextra		\
 			-lSDL -lSDL_image		\
 			-lGL -lGLU -ldl
 
-NAME		=	pinput.so
+NAME		=	PluginName.so
 
 all:		$(NAME)
 

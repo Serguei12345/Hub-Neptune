@@ -5,7 +5,7 @@
 // Login   <ovoyan_s@epitech.net>
 // 
 // Started on  Wed Feb  4 17:05:25 2015 ovoyan_s
-// Last update Fri Mar 20 12:59:29 2015 ovoyan_s
+// Last update Thu Feb 12 19:32:54 2015 ovoyan_s
 //
 
 #ifndef			FILE_MANAGER_HH_
@@ -18,13 +18,16 @@
 # include		<vector>
 
 # include		"Containers.hpp"
-# include		"File.hh"
 # include		"MyException.hh"
 
 class			FileManager
 {
 private:
-  File			file;
+  std::vector<std::string>	linesOfFile;
+  unsigned int			sizeOfFile;
+  std::string			pathOfFile;
+  std::string			nameOfFile;
+  std::string			extensionOfFile;
 
   bool					findNameOfFile(const std::string& pathOfFile);
   bool					findExtensionOfFile(const std::string& pathOfFile);
@@ -39,6 +42,9 @@ public:
   std::vector<std::string>		&getContent() const;
   std::map<std::string, std::vector<std::string> >	getConfigContent();
 
+  std::string				getPathOfFile() const;
+  std::string				getNameOfFile() const;
+  std::string				getExtensionOfFile() const;
 };
 
 #endif			/*	FILE_MANAGER_HH_	*/
